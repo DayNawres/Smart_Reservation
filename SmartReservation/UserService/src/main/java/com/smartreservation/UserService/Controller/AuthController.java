@@ -31,8 +31,8 @@ public class AuthController {
         return service.saveUser(file, firstname, lastname,  email, username,password);
     }
 
-    @PostMapping("/token")
     @PreAuthorize("hasRole('MANAGER')")
+    @PostMapping("/token")
     public ResponseEntity<JwtResponse> getToken(@RequestBody AuthRequest authrequest) {
         String jwt=service.generateToken((authrequest.getUsername()));
         Authentication authenticate=authenticationManager.authenticate((new UsernamePasswordAuthenticationToken(authrequest.getUsername(),authrequest.getPassword())));
