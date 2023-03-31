@@ -1,0 +1,6 @@
+{
+  "clientID": "AczudQilAFlTzeOPDdglCxwZ"
+  "clientSecret": "WPeF_iIBK9ueFGkfc+4OcAa9qUbMacjfviBq.k+snrzlmZoGtUdZShra3Pw6auRJ6SbkdTEIEDi0SCkmSghalJrism2ETCSCAnKulKb78izB-X,8+QaX107YoZx+Rb8i"
+  "token": "AstraCS:AczudQilAFlTzeOPDdglCxwZ:6a2baf7b43be15054a402c582304a350ae9f70b7e4ef6a69a19fcfe656e4d05e"
+}
+https://datastax-cluster-config-prod.s3.us-east-2.amazonaws.com/3b722dc3-d672-4b5f-8240-8d7796c1b8bd-1/secure-connect-venue.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2AIQRQ76S2JCB77W%2F20230331%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230331T100714Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=aeb88968101b3b9df671d95bd46f3f8439436917765c9bb03e958a994c55209c
