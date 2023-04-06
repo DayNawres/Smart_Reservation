@@ -1,0 +1,149 @@
+scalar Upload
+type Mutation
+{addHotel(hotel:Hotel,file:[Upload]):String
+    updateHotel(id:String,hotel:Hotel,file:[Upload]):String
+    updateRestaurent(id:String,restaurent:Restaurent,file:[Upload]):String
+    updateSportFacility(id:String,sportfacility:Sportfacility,file:[Upload]):String
+    addRestaurent(restaurent:Restaurent,file:[Upload]):String
+    addSportfacility(sportfacility:Sportfacility,file:[Upload]):String
+    delete(id:String):String
+   addUser(file:Upload):String
+}
+input User{
+    name:String,
+#    pass:String
+}
+
+type  Query{
+    ShowHotel:[Hotela],
+    ShowRestaurent:[Restaurenta],
+    ShowSportFacility:[SportFacility]
+    ShowUserHotel(username:String):[Hotela]
+    ShowUserRestaurent(username:String):[Restaurenta],
+    ShowUserSportFacility(username:String):[SportFacility]
+
+
+}
+input Hotel{
+    address:String,
+    amenities:[String],
+    capacity:Int,
+    city:String,
+    country:String,
+    description:String,
+    email:String,
+    location:String,
+    name:String,
+    numberOfRooms:Int,
+    phone:String,
+    prices:[String],
+    rating:Float,
+    roomTypes:[String],
+    state:String,
+    username:String,
+    availability:String
+}
+input Restaurent{
+    address:String,
+    amenities:[String],
+    capacity:Int,
+    city:String,
+    country:String,
+    cuisine_type:String,
+    description:String,
+    email:String,
+    images:[String],
+    location:String,
+    name:String,
+    menuesitems:[String],
+    phone:String,
+    prices:[String],
+    rating:Float,
+    state:String,
+    username:String,
+    availability:String
+}
+input Sportfacility{
+    address:String,
+    amenities:[String],
+    capacity:Int,
+    city:String,
+    country:String,
+    description:String,
+    email:String,
+    images:[String],
+    location:String,
+    name:String,
+    phone:String,
+    prices:[String],
+    rating:Float,
+    sport_type:String,
+    state:String,
+    username:String,
+    availability:String
+}
+type Hotela{
+    venueId:String,
+    address:String,
+     amenities:[String!],
+    capacity:Int,
+    city:String,
+    country:String,
+    description:String,
+    email:String,
+    images:String,
+    location:String,
+    name:String,
+    numberOfRooms:Int,
+    phone:String,
+    prices:[Float!],
+    rating:Float,
+    roomTypes:[String],
+    state:String,
+    username:String,
+    availability:String
+
+}
+type Restaurenta{
+    venueId:String,
+    address:String,
+    amenities:[String!],
+    capacity:Int,
+    city:String,
+    country:String,
+    cuisine_type:String,
+    description:String,
+    email:String,
+    images:String,
+    location:String,
+    menuesitems:[String],
+    name:String,
+    phone:String,
+    prices:[Float!],
+    rating:Float,
+    state:String,
+    username:String,
+    availability:String
+
+}
+type SportFacility{
+    venueId:String,
+    address:String,
+    amenities:[String!],
+    capacity:Int,
+    city:String,
+    country:String,
+    description:String,
+    email:String,
+    images:String,
+    location:String,
+    name:String,
+    phone:String,
+    prices:[Float!],
+    rating:Float,
+    sport_type:String,
+    state:String,
+    username:String,
+    availability:String
+
+}

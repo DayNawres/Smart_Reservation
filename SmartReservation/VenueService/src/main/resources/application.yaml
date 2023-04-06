@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: venue-service
+server:
+  port: 9999
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka
+  instance:
+    preferIpAddress: true
+astra:
+  api:
+    application-token: AstraCS:AczudQilAFlTzeOPDdglCxwZ:6a2baf7b43be15054a402c582304a350ae9f70b7e4ef6a69a19fcfe656e4d05e
+    database-id: 3b722dc3-d672-4b5f-8240-8d7796c1b8bd
+    database-region: us-east1
+    cross-region-failback: false
+    grpc:
+      enabled: true
+  cql:
+    enabled: true
+    download-scb:
+      # if disabled zip files must be in folder (path)
+      enabled: true
+      # Looking for files scb_dbid-dbregion.zip in folder (default is ~/.astra/scb)
+      #path: /tmp
+    driver-config:
+      basic:
+        session-keyspace: cass
+graphql:
+  servlet:
+    # Sets if GraphQL servlet should be created and exposed. If not specified defaults to "true".
+    enabled: true
+  graphiql:
+    enabled: true
+  altair:
+    enabled: true
+    mapping: /altair
+
+    static:
+      base-path: /
+    page-title: Altair
+    cdn:
+      enabled: false
+      version: 4.0.2
+    options:
+      endpoint-url: /graphql
+
+      initial-settings:
+        theme: dracula
