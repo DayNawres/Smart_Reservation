@@ -37,7 +37,7 @@ public class HotelGraphQl {
 //        return ApolloScalars.Upload; // name: Upload
 //    }
     @MutationMapping
-    public String addHotel(@Argument(name = "hotel") Hotel hotel,@Argument(name = "file") List<MultipartFile> file)
+    public String addHotel(@Argument(name = "hotel") Hotel hotel )
     {
         Venue venue = new Venue();
 
@@ -54,20 +54,7 @@ public class HotelGraphQl {
         venue.setUpdated_at( LocalDateTime.now());
         venue.setEmail(hotel.email);
         venue.setDescription(hotel.description);
-         List<String> files = new ArrayList<String>();
-
-        for (int i = 0; i < file.size(); i++) {
-            System.out.println(file.get(i));
-
-        String filename= StringUtils.cleanPath(file.get(i).getOriginalFilename());
-        if (filename.contains(".."))
-        {System.out.println(("not a valid file"));}
-        try {
-            files.add(Base64.getEncoder().encodeToString(file.get(i).getBytes()));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }}
-        venue.setImages(files);
+        venue.setImages(hotel.images);
         venue.setLocation(hotel.location);
         venue.setName(hotel.name);
         venue.setNumber_of_Rooms(hotel.numberOfRooms);
@@ -82,7 +69,7 @@ public class HotelGraphQl {
 
         return "hhhhhh"; }
     @MutationMapping
-    public String addRestaurent(@Argument(name="restaurent") Restaurent restaurent,@Argument(name = "file") List<MultipartFile> file)
+    public String addRestaurent(@Argument(name="restaurent") Restaurent restaurent)
     {
         Venue venue = new Venue();
         venue.setCuisine_type(restaurent.cuisine_type);
@@ -101,20 +88,8 @@ public class HotelGraphQl {
         venue.setEmail(restaurent.email);
         venue.setDescription(restaurent.description);
         venue.setMenuesitems(restaurent.menuesitems);
-        List<String> files = new ArrayList<String>();
 
-        for (int i = 0; i < file.size(); i++) {
-            System.out.println(file.get(i));
-
-            String filename= StringUtils.cleanPath(file.get(i).getOriginalFilename());
-            if (filename.contains(".."))
-            {System.out.println(("not a valid file"));}
-            try {
-                files.add(Base64.getEncoder().encodeToString(file.get(i).getBytes()));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }}
-        venue.setImages(files);
+        venue.setImages(restaurent.images);
         venue.setLocation(restaurent.location);
         venue.setName(restaurent.name);
         venue.setPhone(restaurent.phone);
@@ -127,7 +102,7 @@ public class HotelGraphQl {
 
         return "hhhhhh"; }
     @MutationMapping
-    public String addSportfacility(@Argument(name="sportfacility") Sportfacility sportfacility,@Argument(name = "file") List<MultipartFile> file)
+    public String addSportfacility(@Argument(name="sportfacility") Sportfacility sportfacility)
     {
         Venue venue = new Venue();
         venue.setSport_type(sportfacility.sport_type);
@@ -144,20 +119,8 @@ public class HotelGraphQl {
         venue.setUpdated_at( LocalDateTime.now());
         venue.setEmail(sportfacility.email);
         venue.setDescription(sportfacility.description);
-        List<String> files = new ArrayList<String>();
 
-        for (int i = 0; i < file.size(); i++) {
-            System.out.println(file.get(i));
-
-            String filename= StringUtils.cleanPath(file.get(i).getOriginalFilename());
-            if (filename.contains(".."))
-            {System.out.println(("not a valid file"));}
-            try {
-                files.add(Base64.getEncoder().encodeToString(file.get(i).getBytes()));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }}
-        venue.setImages(files);
+        venue.setImages(sportfacility.images);
         venue.setLocation(sportfacility.location);
         venue.setName(sportfacility.name);
         venue.setPhone(sportfacility.phone);
@@ -172,7 +135,7 @@ public class HotelGraphQl {
 
 
     @MutationMapping
-    public String updateHotel(@Argument String id,@Argument(name="hotel") Hotel hotel,@Argument(name = "file") List<MultipartFile> file)
+    public String updateHotel(@Argument String id,@Argument(name="hotel") Hotel hotel)
     {
 
         Optional<Venue> venueData=venueRepository.findByVenueId(id);
@@ -186,21 +149,8 @@ public class HotelGraphQl {
 
         venue.setEmail(hotel.email);
         venue.setDescription(hotel.description);
-        venue.setMenuesitems(List.of(new String[]{"none"}));
-            List<String> files = new ArrayList<String>();
 
-            for (int i = 0; i < file.size(); i++) {
-                System.out.println(file.get(i));
-
-                String filename= StringUtils.cleanPath(file.get(i).getOriginalFilename());
-                if (filename.contains(".."))
-                {System.out.println(("not a valid file"));}
-                try {
-                    files.add(Base64.getEncoder().encodeToString(file.get(i).getBytes()));
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }}
-            venue.setImages(files);
+            venue.setImages(hotel.images);
         venue.setLocation(hotel.location);
         venue.setName(hotel.name);
         venue.setNumber_of_Rooms(hotel.numberOfRooms);
@@ -216,7 +166,7 @@ public class HotelGraphQl {
 
         return "updated"; }
     @MutationMapping
-    public String updateRestaurent(@Argument String id,@Argument(name="restaurent") Restaurent restaurent,@Argument(name = "file") List<MultipartFile> file)
+    public String updateRestaurent(@Argument String id,@Argument(name="restaurent") Restaurent restaurent)
     {
 
         Optional<Venue> venueData=venueRepository.findByVenueId(id);
@@ -238,20 +188,7 @@ public class HotelGraphQl {
             venue.setEmail(restaurent.email);
             venue.setDescription(restaurent.description);
             venue.setMenuesitems(restaurent.menuesitems);
-            List<String> files = new ArrayList<String>();
-
-            for (int i = 0; i < file.size(); i++) {
-                System.out.println(file.get(i));
-
-                String filename= StringUtils.cleanPath(file.get(i).getOriginalFilename());
-                if (filename.contains(".."))
-                {System.out.println(("not a valid file"));}
-                try {
-                    files.add(Base64.getEncoder().encodeToString(file.get(i).getBytes()));
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }}
-            venue.setImages(files);
+            venue.setImages(restaurent.images);
             venue.setLocation(restaurent.location);
             venue.setName(restaurent.name);
             venue.setPhone(restaurent.phone);
@@ -265,7 +202,7 @@ public class HotelGraphQl {
 
         return "updated"; }
     @MutationMapping
-    public String updateSportFacilty(@Argument String id,@Argument(name = "sportFacility") Sportfacility sportfacility,@Argument(name = "file") List<MultipartFile> file)
+    public String updateSportFacilty(@Argument String id,@Argument(name = "sportFacility") Sportfacility sportfacility)
     {
 
         Optional<Venue> venueData=venueRepository.findByVenueId(id);
@@ -287,18 +224,7 @@ public class HotelGraphQl {
             venue.setDescription(sportfacility.description);
             List<String> files = new ArrayList<String>();
 
-            for (int i = 0; i < file.size(); i++) {
-                System.out.println(file.get(i));
-
-                String filename= StringUtils.cleanPath(file.get(i).getOriginalFilename());
-                if (filename.contains(".."))
-                {System.out.println(("not a valid file"));}
-                try {
-                    files.add(Base64.getEncoder().encodeToString(file.get(i).getBytes()));
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }}
-            venue.setImages(files);
+            venue.setImages(sportfacility.images);
             venue.setLocation(sportfacility.location);
             venue.setName(sportfacility.name);
             venue.setPhone(sportfacility.phone);

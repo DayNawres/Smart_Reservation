@@ -15,6 +15,9 @@ public class Hotel {
     public String country;
     public String description;
     public String email;
+
+    public List<String> images;
+
     public String location;
     public String name;
     public int numberOfRooms;

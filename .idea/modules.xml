@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SmartReservation/ApiGateway/ApiGateway.iml" filepath="$PROJECT_DIR$/SmartReservation/ApiGateway/ApiGateway.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SmartReservation/ServiceRegistry/ServiceRegistry.iml" filepath="$PROJECT_DIR$/SmartReservation/ServiceRegistry/ServiceRegistry.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Smart reservation system for multiple venues.iml" filepath="$PROJECT_DIR$/.idea/Smart reservation system for multiple venues.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SmartReservation/SmartReservation.iml" filepath="$PROJECT_DIR$/SmartReservation/SmartReservation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SmartReservation/UserService/UserService.iml" filepath="$PROJECT_DIR$/SmartReservation/UserService/UserService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SmartReservation/VenueService/VenueService.iml" filepath="$PROJECT_DIR$/SmartReservation/VenueService/VenueService.iml" />
     </modules>
   </component>
 </project>

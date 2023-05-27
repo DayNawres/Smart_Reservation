@@ -26,13 +26,7 @@ import java.util.UUID;
 @EnableEurekaClient
 //@EnableCassandraRepositories
 public class VenueServiceApplication {
-        @Autowired
-    private AstraClient astraClient;
-    @GetMapping("/")
-    public String hello() {
-        return astraClient.apiDevopsOrganizations().organizationId();
-    }
-    public static void main(String[] args) {
+       public static void main(String[] args) {
 
         SpringApplication.run(VenueServiceApplication.class, args);
 

@@ -1,13 +1,13 @@
 scalar Upload
 type Mutation
-{addHotel(hotel:Hotel,file:[Upload]):String
-    updateHotel(id:String,hotel:Hotel,file:[Upload]):String
-    updateRestaurent(id:String,restaurent:Restaurent,file:[Upload]):String
-    updateSportFacility(id:String,sportfacility:Sportfacility,file:[Upload]):String
-    addRestaurent(restaurent:Restaurent,file:[Upload]):String
-    addSportfacility(sportfacility:Sportfacility,file:[Upload]):String
+{addHotel(hotel:Hotel):String
+    updateHotel(id:String,hotel:Hotel):String
+    updateRestaurent(id:String,restaurent:Restaurent):String
+    updateSportFacility(id:String,sportfacility:Sportfacility):String
+    addRestaurent(restaurent:Restaurent):String
+    addSportfacility(sportfacility:Sportfacility):String
     delete(id:String):String
-   addUser(file:Upload):String
+#    addUser():String
 }
 input User{
     name:String,
@@ -91,7 +91,7 @@ type Hotela{
     country:String,
     description:String,
     email:String,
-    images:String,
+    images:[String!],
     location:String,
     name:String,
     numberOfRooms:Int,
@@ -114,7 +114,7 @@ type Restaurenta{
     cuisine_type:String,
     description:String,
     email:String,
-    images:String,
+    images:[String!],
     location:String,
     menuesitems:[String],
     name:String,
@@ -135,7 +135,7 @@ type SportFacility{
     country:String,
     description:String,
     email:String,
-    images:String,
+    images:[String!],
     location:String,
     name:String,
     phone:String,
